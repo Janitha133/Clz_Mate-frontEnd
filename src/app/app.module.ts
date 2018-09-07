@@ -11,6 +11,8 @@ import { appRoutes } from './routers';
 import { SlideshowComponent } from './login/slideshow/slideshow.component';
 import { StudentComponent } from './student/student.component';
 import { TeacherComponent } from './teacher/teacher.component';
+import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
+import { AdminRegstComponent } from './admin/admin-regst/admin-regst.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { TeacherComponent } from './teacher/teacher.component';
     AdminComponent,
     SlideshowComponent,
     StudentComponent,
-    TeacherComponent
+    TeacherComponent,
+    AdminSidebarComponent,
+    AdminRegstComponent,
   ],
   imports: [
     BrowserModule,
