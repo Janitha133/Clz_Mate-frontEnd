@@ -10,9 +10,11 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routers';
 import { SlideshowComponent } from './login/slideshow/slideshow.component';
 import { StudentComponent } from './student/student.component';
-import { TeacherComponent } from './teacher/teacher.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { AdminRegstComponent } from './admin/admin-regst/admin-regst.component';
+import { AdRgStudentComponent } from './admin/admin-regst/ad-rg-student/ad-rg-student.component';
+import { AdRgTeacherComponent } from './admin/admin-regst/ad-rg-teacher/ad-rg-teacher.component';
+import { TeacherComponent } from './teacher/teacher.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,11 @@ import { AdminRegstComponent } from './admin/admin-regst/admin-regst.component';
     AdminComponent,
     SlideshowComponent,
     StudentComponent,
-    TeacherComponent,
     AdminSidebarComponent,
     AdminRegstComponent,
+    AdRgStudentComponent,
+    AdRgTeacherComponent,
+    TeacherComponent,
   ],
   imports: [
     BrowserModule,
