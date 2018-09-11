@@ -15,6 +15,8 @@ import { AdminRegstComponent } from './admin/admin-regst/admin-regst.component';
 import { AdRgStudentComponent } from './admin/admin-regst/ad-rg-student/ad-rg-student.component';
 import { AdRgTeacherComponent } from './admin/admin-regst/ad-rg-teacher/ad-rg-teacher.component';
 import { TeacherComponent } from './teacher/teacher.component';
+import { AuthService } from './services/auth-service.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,8 +38,12 @@ import { TeacherComponent } from './teacher/teacher.component';
     RouterModule.forRoot(
       appRoutes
     ),
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

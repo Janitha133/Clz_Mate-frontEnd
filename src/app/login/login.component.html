@@ -3,22 +3,43 @@
     <div class="col-md-12">
       <div class="container">
         <div class="row">
-          <div class="card col-md-4 wrapper log-back" >
-            <form class="p-3">
+          <div class="card col-md-4 wrapper log-back">
+            <form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="p-3">
               <div class="p-3">
                 <h2 class="text-center">Login</h2>
               </div>
               <hr>
+              <div 
+                *ngIf="invalidLogin"
+              class="alert alert-danger">
+                Incorrect username or password
+              </div>
               <div class="form-group pt-3">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input formControlName="username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+              </div>
+              <div *ngIf="username.touched && username.invalid">
+                <div *ngIf="username.errors.required" class="alert alert-danger">
+                  <small>Please enter username</small>
+                </div>
+              </div>
+              <div *ngIf="username.touched && username.invalid">
+                <div *ngIf="username.errors.email" class="alert alert-danger">
+                  <small>Please enter valid email</small>
+                </div>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
               </div>
               <br>
-              <button class="btn btn-primary btn-block"  routerLink="/admin">Login</button>
+              <div *ngIf="password.touched && password.invalid">
+                <div *ngIf="password.errors.required" class="alert alert-danger">
+                  <small>Please enter the password</small>
+                </div>
+              </div>
+              <button [disabled]="form.invalid" class="btn btn-primary btn-block">Login</button>
               <small id="pswHelp" class="form-text text-muted pt-3 float-right"> <a href="#">Forgot password?</a></small>
             </form>
           </div>
