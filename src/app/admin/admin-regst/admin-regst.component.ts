@@ -12,4 +12,17 @@ export class AdminRegstComponent implements OnInit {
   ngOnInit() {
   }
 
+  teacherPane = false;
+  studentPane = true;
+
+  selectTeacher(){
+    this.teacherPane = true;
+    this.studentPane = false;
+  }
+
+  selectStudent(){
+    this.studentPane = true;
+    this.teacherPane = false;
+  }
+
 }

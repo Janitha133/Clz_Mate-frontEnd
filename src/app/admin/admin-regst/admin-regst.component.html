@@ -5,17 +5,20 @@
   <hr>
   <ul class="nav nav-tabs border-primary" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active border-primary border-bottom-0 act" data-toggle="tab" href="" role="tab" aria-selected="true">Student Registration Form</a>
+      <a (click)="selectStudent()" class="nav-link active border-primary border-bottom-0 act" data-toggle="tab" role="tab" >Student
+        Registration Form</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link border-primary border-bottom-0 act" data-toggle="tab" href="" role="tab" aria-selected="false">Teacher Registration Form</a>
+      <a (click)="selectTeacher()" class="nav-link border-primary border-bottom-0 act" data-toggle="tab" role="tab">Teacher
+        Registration Form</a>
     </li>
   </ul>
+
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade" id="" role="tabpanel">
+    <div class="tab-pane fade" id="" role="tabpanel" [class.show]="teacherPane" [class.active]="teacherPane">
       <app-ad-rg-student></app-ad-rg-student>
     </div>
-    <div class="tab-pane fade show active" id="" role="tabpanel">
+     <div class="tab-pane fade" id="" role="tabpanel" [class.show]="studentPane" [class.active]="studentPane">
       <app-ad-rg-teacher></app-ad-rg-teacher>
     </div>
   </div>
