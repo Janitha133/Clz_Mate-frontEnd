@@ -33,8 +33,6 @@ export class LoginComponent implements OnInit {
   onSubmit(form){
     let user = form.value;
     if(this.authService.adminLogin(user)){
-      localStorage.setItem('token', "abcdefghijklmnopqrstuvwxyz");
-      this.form.reset();
       this.router.navigate(['admin']);
     }else{
       this.invalidLogin = true;

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Http } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,16 +8,21 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private http: Http
   ) { 
 
   }
 
   adminLogin(user){
-    if(user.username === "admin@email.com" && user.password === "admin123"){
-      return true;
-    }
-    return false;
+    return this.http.get('https://polar-meadow-28819.herokuapp.com/user/login')
+      .subscribe(result => {
+        if(result.json().token){
+          localStorage.setItem('token', result.json().token);
+          return true;
+        }
+        return false;
+      })
   }
 
   isLogged(){
